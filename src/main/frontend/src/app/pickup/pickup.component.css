@@ -1,0 +1,90 @@
+#pickup {
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: var(--menu-color);
+  border-radius: 30px;
+  border: 2px solid black;
+  width: 1000px;
+  height: 700px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+#labels {
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+form > h1 {
+    margin: 0;
+    margin-bottom: 50px;
+    color: #ffd6d6;
+    text-shadow:
+        0 0 7px #ffecec,
+        0 0 10px #ffcfcf,
+        0 0 15px #ffcdcd,
+        0 0 25px rgb(255, 186, 186),
+        0 0 40px rgb(255, 160, 160),
+        0 0 55px rgb(255, 142, 142),
+        0 0 62px rgb(255, 129, 129),
+        0 0 75px rgb(255, 115, 115);
+}
+
+#confirm {
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: red;
+  border: none;
+  box-shadow: 0 9px #999;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  width: 100px;
+  height: 35px;
+}
+
+#confirm:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  width: 920px;
+  height: 50px;
+}
+
+ul > li {
+  margin-left: 20px;
+  text-align: left;
+  display: inline-block;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 60px;
+  height: 20px;
+  margin-left: 15px;
+  background-color:#ccc;
+}
+
+input:focus {
+  outline: none;
+}

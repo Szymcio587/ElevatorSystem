@@ -1,0 +1,56 @@
+#status {
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+.elevator {
+  width: 1200px;
+  height: 35px;
+  background-color: var(--menu-color);
+  margin-top: 7px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+button {
+  position: absolute;
+  top: 14px;
+  right: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #222;
+  border: none;
+  box-shadow: 0 9px #999;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  width: 60px;
+  height: 30px;
+}
+
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#floors {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#floors > p {
+  margin-left: 10px;
+}

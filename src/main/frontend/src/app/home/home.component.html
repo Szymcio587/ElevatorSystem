@@ -1,0 +1,26 @@
+<div id="home">
+  <header>
+    <h1>Elevator Control System</h1>
+  </header>
+
+  <menu>
+    <div id="pickup" class="option">
+      <button class="button" (click)="Redirect('/pickup')"></button>
+      <p>Pick up elevator</p>
+    </div>
+    <div id="change" class="option">
+      <button class="button" (click)="Redirect('/change')"></button>
+      <p>Change elevator</p>
+    </div>
+    <div id="step" class="option">
+      <button class="button" (click)="PerformStep()"></button>
+      <p>Perform step</p>
+    </div>
+    <div id="status" class="option">
+      <button class="button" (click)="Redirect('/status')"></button>
+      <p>Check status</p>
+    </div>
+  </menu>
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,18 @@
+<div id="status">
+  <ul>
+    <li *ngFor="let elevator of elevators">
+      <div class="elevator">
+        <p>Elevator nr. {{elevator['id']}}</p>
+        <p>Current floor: {{elevator['floor']}}</p>
+        <p>Destination: {{elevator['currentDestination']}}</p>
+        <p *ngIf="elevator['currentDestination'] > elevator['floor']">Direction: up</p>
+        <p *ngIf="elevator['currentDestination'] < elevator['floor']">Direction: down</p>
+        <p *ngIf="elevator['currentDestination'] == elevator['floor']">Direction: not moving</p>
+        <div id="floors"><p> List of directions:<p *ngFor="let floor of elevator['allDestinations']">{{floor}}</p></div>
+      </div>
+    </li>
+  </ul>
+
+  <button (click)="Redirect()">Back</button>
+</div>
+

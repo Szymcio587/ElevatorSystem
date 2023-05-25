@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import java.util.List;
 
 @Component
 @Data
@@ -19,21 +20,17 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Document
-@Table(name = "Games")
-public class Game {
+@Table(name = "elevators")
+public class Elevator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Field
-    private String name;
+    private int floor;
     @Field
-    private GameType type;
+    private int currentDestination;
     @Field
-    private double price;
-    @Field
-    private double note;
-    @Field
-    private String description;
+    private List<Integer> allDestinations;
 }
