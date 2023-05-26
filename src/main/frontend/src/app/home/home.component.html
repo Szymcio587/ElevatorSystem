@@ -4,6 +4,11 @@
   </header>
 
   <menu>
+    <div id="screws">
+      <div class="screw"><div class="indent"></div></div>
+      <div class="screw"><div class="indent"></div></div>
+    </div>
+
     <div id="pickup" class="option">
       <button class="button" (click)="Redirect('/pickup')"></button>
       <p>Pick up elevator</p>
@@ -14,12 +19,18 @@
     </div>
     <div id="step" class="option">
       <button class="button" (click)="PerformStep()"></button>
-      <p>Perform step</p>
+      <p>Perform step (Currently performed steps: {{currSteps}})</p>
     </div>
     <div id="status" class="option">
       <button class="button" (click)="Redirect('/status')"></button>
       <p>Check status</p>
     </div>
+
+    <div id="screws">
+      <div class="screw"><div class="indent"></div></div>
+      <div class="screw"><div class="indent"></div></div>
+    </div>
+
   </menu>
 
   <router-outlet></router-outlet>

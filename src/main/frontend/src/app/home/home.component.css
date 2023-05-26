@@ -39,14 +39,16 @@ menu {
   height: 500px;
   background-color: var(--menu-color);
   border-radius: 30px;
+  padding: 20px;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .option {
+  margin-left: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -61,7 +63,7 @@ menu {
 .button {
   text-align: center;
   cursor: pointer;
-  color: #fff;
+
   background-color: #ff0000;
   border: none;
   border-radius: 30px;
@@ -73,4 +75,38 @@ menu {
 .button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+#screws {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.screw {
+  top: 10px;
+  left: 49%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-image: url('/src/assets/images/screw.jpg');
+  -moz-box-shadow: 0px 3px 8px #000;
+  -webkit-box-shadow: 0px 3px 8px #000;
+  box-shadow: 0px 3px 8px #000;
+
+}
+.indent {
+  position: relative;
+  height: 10px;
+  width: 30px;
+  top: 10px;
+  background-image: url('/src/assets/images/screw.jpg');
+  -moz-box-shadow: inset 0px 3px 8px #222;
+  -webkit-box-shadow: inset 0px 3px 8px #222;
+  box-shadow: inset 0px 3px 8px #222;
+  transform:rotate(150deg);
+  -ms-transform:rotate(150deg);
+  -webkit-transform:rotate(150deg);
+  border-radius: 2px;
 }

@@ -33,4 +33,10 @@ public class Elevator {
     private int currentDestination;
     @Field
     private List<Integer> allDestinations;
+
+    public void AddDestination(int destination) {
+        List<Integer> destinations = this.getAllDestinations();
+        destinations.add(destination);
+        this.setAllDestinations(destinations);
+    }
 }

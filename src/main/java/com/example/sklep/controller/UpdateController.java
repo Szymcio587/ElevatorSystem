@@ -2,6 +2,8 @@ package com.example.sklep.controller;
 
 import com.example.sklep.calculations.Calculator;
 import com.example.sklep.model.Elevator;
+import com.example.sklep.model.Request;
+import com.example.sklep.safety.CheckElevator;
 import com.example.sklep.service.ElevatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,13 +22,15 @@ public class UpdateController {
     @Autowired
     private Calculator calculator;
 
+    @Autowired
+    private CheckElevator check;
+
     @PostMapping("/elevator")
     public ResponseEntity<String> HandleElevatorChange(@RequestBody Elevator elevator) {
-        if (elevator.getId() >= 0 && elevator.getId() <= 15) {
+        if (check.CheckElevator(elevator)) {
             List<Integer> list = elevator.getAllDestinations();
             list.add(elevator.getCurrentDestination());
             elevator.setAllDestinations(list);
-            elevator.setCurrentDestination(calculator.CalculateDestination(elevator.getFloor(), elevator.getAllDestinations()));
             elevatorService.UpdateElevator(elevator);
             return ResponseEntity.ok("Data received and processed successfully");
         }
@@ -34,4 +38,21 @@ public class UpdateController {
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("There is no such elevator");
         }
     }
+
+    @PostMapping("/new")
+    public ResponseEntity<String> HandleNewPerson(@RequestBody Request request) {
+        if (check.CheckRequest(request)) {
+            calculator.AddPerson(request);
+            return ResponseEntity.ok("Data received and processed successfully");
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("Request cannot be fulfilled");
+        }
+    }
+
+    @PostMapping("/step")
+    public void PerformStep() {
+        calculator.Step();
+    }
+
 }

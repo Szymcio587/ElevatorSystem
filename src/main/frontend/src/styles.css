@@ -1,6 +1,7 @@
 :root {
   --background-color: #333;
   --menu-color: #555;
+  color: #fff;
 }
 
 @font-face {

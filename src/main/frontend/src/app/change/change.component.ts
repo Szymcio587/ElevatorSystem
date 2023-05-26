@@ -17,13 +17,13 @@ export class ChangeComponent {
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  AddNumber() {
-    if (this.number >= 0 && this.number <= 15 && !this.allDestinations.includes(this.number)) {
+  AddNumber(): void {
+    if (this.number >= 0 && this.number <= 15 && !this.allDestinations.includes(this.number) && this.number != this.currentDestination) {
       this.allDestinations.push(this.number);
     }
   }
 
-  SubmitForm() {
+  SubmitForm(): void {
     const formData = {
       id: this.id,
       floor: this.floor,
@@ -34,6 +34,10 @@ export class ChangeComponent {
     this.httpClient.post('http://localhost:8080/change/elevator', formData)
       .subscribe(response => { });
 
+    this.router.navigate(['']);
+  }
+
+  GoBack(): void {
     this.router.navigate(['']);
   }
 }

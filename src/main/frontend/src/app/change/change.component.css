@@ -12,7 +12,8 @@ form {
   border-radius: 30px;
   border: 2px solid black;
   width: 1000px;
-  height: 700px;
+  height: 600px;
+  padding: 20px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -24,6 +25,7 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 80%;
   flex-direction: column;
 }
 
@@ -42,7 +44,8 @@ form > h1 {
         0 0 75px rgb(255, 115, 115);
 }
 
-#confirm {
+button {
+  position: relative;
   text-align: center;
   cursor: pointer;
   color: #fff;
@@ -55,9 +58,14 @@ form > h1 {
   height: 35px;
 }
 
-#confirm:active {
+button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+#back {
+  background-color: #222;
+  margin-left: 200px;
 }
 
 ul {
@@ -85,6 +93,49 @@ input {
   background-color:#ccc;
 }
 
+input[type = button] {
+  width: 60px;
+  height: 28px;
+  margin-left: 15px;
+  background-color:#ccc;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
 input:focus {
   outline: none;
+}
+
+#screws {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.screw {
+  top: 10px;
+  left: 49%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-image: url('/src/assets/images/screw.jpg');
+  -moz-box-shadow: 0px 3px 8px #000;
+  -webkit-box-shadow: 0px 3px 8px #000;
+  box-shadow: 0px 3px 8px #000;
+
+}
+.indent {
+  position: relative;
+  height: 10px;
+  width: 30px;
+  top: 10px;
+  background-image: url('/src/assets/images/screw.jpg');
+  -moz-box-shadow: inset 0px 3px 8px #222;
+  -webkit-box-shadow: inset 0px 3px 8px #222;
+  box-shadow: inset 0px 3px 8px #222;
+  transform:rotate(150deg);
+  -ms-transform:rotate(150deg);
+  -webkit-transform:rotate(150deg);
+  border-radius: 2px;
 }

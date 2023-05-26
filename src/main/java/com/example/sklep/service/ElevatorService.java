@@ -26,9 +26,8 @@ ElevatorRepository elevatorRepository;
     }
 
     public void UpdateElevator(Elevator elevator) {
-        if(this.GetElevator(elevator.getId()).isPresent()) {
+        if(this.GetElevator(elevator.getId()).isPresent())
             elevatorRepository.save(elevator);
-        }
     }
 
 }

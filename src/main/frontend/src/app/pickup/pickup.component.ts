@@ -8,31 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./pickup.component.css']
 })
 export class PickupComponent {
-  number: number = 0;
-  id: number = 1;
+
+  id: number = 4;
   floor: number = 0;
   currentDestination: number = 0;
   allDestinations: number[] = [];
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  AddNumber() {
-    if (this.number >= 0 && this.number <= 15 && !this.allDestinations.includes(this.number)) {
-      this.allDestinations.push(this.number);
-    }
-  }
-
-  SubmitForm() {
+  SubmitForm(): void {
     const formData = {
-      id: this.id,
       floor: this.floor,
-      currentDestination: this.currentDestination,
-      allDestinations: this.allDestinations
+      destination: this.currentDestination
     };
 
-    this.httpClient.post('http://localhost:8080/change/elevator', formData)
+    this.httpClient.post('http://localhost:8080/change/new', formData)
       .subscribe(response => { });
 
+    this.router.navigate(['']);
+  }
+
+  GoBack(): void {
     this.router.navigate(['']);
   }
 }

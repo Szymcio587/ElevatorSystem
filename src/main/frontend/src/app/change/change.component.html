@@ -1,5 +1,11 @@
 <div id="change">
   <form (ngSubmit)="SubmitForm()">
+
+    <div id="screws">
+      <div class="screw"><div class="indent"></div></div>
+      <div class="screw"><div class="indent"></div></div>
+    </div>
+
     <h1>Change parameters for a choosen elevator</h1>
     <div id="labels">
       <div class="label">
@@ -16,8 +22,8 @@
       </div>
       <div class="label">
         <label for="number">Create a new list of all destinations(between 0 and 15, cannot repeat):</label>
-        <input type="number" id="number" name="newNumber" placeholder="Enter a number" [(ngModel)]="number">
-        <button type="button" id="addNumber" (click)="AddNumber()">Add</button>
+        <input type="number" id="number" name="newNumber" min="0" max="15" placeholder="Enter a number" [(ngModel)]="number">
+        <input type="button" id="addNumber" value="Add" (click)="AddNumber()"/>
       </div>
     </div>
     <div>
@@ -25,6 +31,16 @@
         <li *ngFor="let number of allDestinations">{{ number }}</li>
       </ul>
     </div>
-    <button type="submit" id="confirm">Confirm</button>
+
+    <div id="buttons">
+      <button type="submit" id="confirm">Confirm</button>
+      <button type="button" id="back" (click)="GoBack()">Back</button>
+    </div>
+
+    <div id="screws">
+      <div class="screw"><div class="indent"></div></div>
+      <div class="screw"><div class="indent"></div></div>
+    </div>
+
   </form>
 </div>

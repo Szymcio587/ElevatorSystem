@@ -1,6 +1,11 @@
 <div id="pickup">
   <form (ngSubmit)="SubmitForm()">
-    <h1>Change parameters for a choosen elevator</h1>
+    <div id="screws">
+      <div class="screw"><div class="indent"></div></div>
+      <div class="screw"><div class="indent"></div></div>
+    </div>
+
+    <h1>Pickup an elevator</h1>
     <div id="labels">
       <div class="label">
         <label>Current floor(between 0 and 15): </label>
@@ -12,7 +17,15 @@
       </div>
     </div>
 
-    <button type="submit" id="confirm">Confirm</button>
+    <div id="buttons">
+      <button type="submit" id="confirm">Confirm</button>
+      <button type="button" id="back" (click)="GoBack()">Back</button>
+    </div>
+
+    <div id="screws">
+      <div class="screw"><div class="indent"></div></div>
+      <div class="screw"><div class="indent"></div></div>
+    </div>
   </form>
 </div>
 
